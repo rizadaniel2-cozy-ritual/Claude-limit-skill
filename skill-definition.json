@@ -1,0 +1,52 @@
+{
+  "name": "Claude Limit Skill",
+  "version": "1.0.0",
+  "description": "A skill for managing and tracking token usage limits in Claude conversations",
+  "author": "rizadaniel2-cozy-ritual",
+  "tools": [
+    {
+      "name": "set_token_limit",
+      "description": "Set a maximum token limit for conversation tracking",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of tokens allowed"
+          }
+        },
+        "required": ["limit"]
+      }
+    },
+    {
+      "name": "get_current_usage",
+      "description": "Get current token usage statistics",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "reset_usage",
+      "description": "Reset the usage counter to zero",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_usage_report",
+      "description": "Get a detailed usage report with breakdown",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string",
+            "enum": ["json", "text"],
+            "description": "Format of the report"
+          }
+        }
+      }
+    }
+  ]
+}
